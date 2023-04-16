@@ -4,7 +4,7 @@ from typing import List
 
 #declaring variables for setup function
 PROJECT_NAME = "housing-predictor"
-VERSION = "0.0.1"
+VERSION = "0.0.2"
 AUTHOR = "Pratik"
 DESCRIPTION = "This is my first FSDS batch machine learning Project"
 PACKAGES = ["housing"]

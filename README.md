@@ -23,3 +23,7 @@ docker images
 Run docker image
 docker run -p 5000:5000 -e PORT=5000 <docker code>
 
+install ipykernel
+
+pip install ipykernel
+

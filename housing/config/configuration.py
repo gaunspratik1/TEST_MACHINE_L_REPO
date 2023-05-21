@@ -7,7 +7,7 @@ import sys,os
 from housing.constant import *
 from housing.exception import HousingException
 
-class configuration:
+class Configuration:
 
     def __init__(self, config_file_path:str = CONFIG_FILE_PATH, current_time_stamp:str = CURRENT_TIME_STAMP) -> None:
         try:
@@ -48,6 +48,20 @@ class configuration:
                 ingested_data_dir,
                 data_ingestion_info[DATA_INGESTION_TEST_DIR_KEY]
             )
+
+
+            data_ingestion_config=DataIngestionConfig(
+                dataset_download_url=dataset_download_url, 
+                tgz_download_dir=tgz_download_dir, 
+                raw_data_dir=raw_data_dir, 
+                ingested_train_dir=ingested_train_dir, 
+                ingested_test_dir=ingested_test_dir
+            )
+            logging.info(f"Data Ingestion config: {data_ingestion_config}")
+            return data_ingestion_config
+        except Exception as e:
+            raise HousingException(e,sys) from e
+             
 
     def get_data_validation_config(self) -> DataValidationConfig:
         pass
